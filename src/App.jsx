@@ -30,6 +30,7 @@ function App() {
         <Routes>
           {/* Dashboard route */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/prediction" element={<></>} />
           
           {/* Homepage route */}
           <Route path="/" element={<>
