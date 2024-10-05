@@ -1,0 +1,53 @@
+.HeroSectionContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.HeroSectionContainer img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.3);
+}
+.HeroSectionContent{
+    height: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+}
+.AboutUSSection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.AboutUSSection h1 {
+    color : green;
+}
+.blurLight{
+    z-index: -1;
+    position: absolute;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 50%;
+    filter: blur(90px);
+}
+@media only screen and (max-width: 768px){
+
+    #subscribeNow{
+        font-size: 1rem;
+    }
+    
+    .HeroSectionContent{
+        font-size: 1rem;
+    }
+
+}
