@@ -80,9 +80,9 @@ export default function Header() {
             <Button color="inherit" size="large" onClick={() => handleNavigation('/')}>
               Subscribe
             </Button>
-            <Button color="inherit" size="large" onClick={() => handleNavigation('/prediction')}>
+            {/* <Button color="inherit" size="large" onClick={() => handleNavigation('/prediction')}>
               Predict
-            </Button>
+            </Button> */}
             <Button color="inherit" size="large" onClick={() => handleNavigation('/dashboard')}>
               Data Visualisation
             </Button>

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Subscribe from './components/Subscribe';
 import Dashboard from './components/Dashboard';
+import Tips from './components/Tips';
 
 // Define the theme for Material-UI components
 const theme = createTheme({
@@ -31,6 +32,7 @@ function App() {
           {/* Dashboard route */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/prediction" element={<></>} />
+          <Route path="/tips" element={<Tips/>}/>
           
           {/* Homepage route */}
           <Route path="/" element={<>
