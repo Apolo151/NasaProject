@@ -1,17 +1,16 @@
-import react from 'react'
-import './App.css'
-import Header from "./components/Header"
-
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use Routes instead of Switch
+import { ThemeProvider, CssBaseline, createTheme } from '@material-ui/core';
+import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Subscribe from './components/Subscribe';
-// Create a custom theme
+import Dashboard from './components/Dashboard';
+
+// Define the theme for Material-UI components
 const theme = createTheme({
   palette: {
-    mode: 'light',  // You can switch between 'light' and 'dark'
     primary: {
-      main: '#1b5e20', // Your primary color
+      main: '#1976d2', // Your primary color
     },
     secondary: {
       main: '#fff', // Your secondary color
@@ -22,18 +21,25 @@ const theme = createTheme({
   },
 });
 
-
 function App() {
   return (
-    <>
+    <Router>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Header></Header>
-        <HeroSection></HeroSection>
-        <Subscribe></Subscribe>
+        <Header />
+        <Routes>
+          {/* Dashboard route */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          
+          {/* Homepage route */}
+          <Route path="/" element={<>
+            <HeroSection />
+            <Subscribe />
+          </>} />
+        </Routes>
       </ThemeProvider>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

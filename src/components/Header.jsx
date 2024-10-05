@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,9 +12,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import "./Header.css"
+import "./Header.css";
+
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -25,6 +28,10 @@ export default function Header() {
     setDrawerOpen(open);
   };
 
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   // Sidebar content
   const list = (
     <Box
@@ -34,14 +41,17 @@ export default function Header() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        <ListItem button>
+        <ListItem button onClick={() => handleNavigation('/')}>
           <ListItemText primary="Subscribe" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={() => handleNavigation('/prediction')}>
           <ListItemText primary="Predict" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={() => handleNavigation('/dashboard')}>
           <ListItemText primary="Data Visualisation" />
+        </ListItem>
+        <ListItem button onClick={() => handleNavigation('/tips')}>
+          <ListItemText primary="General Tips" />
         </ListItem>
       </List>
       <Divider />
@@ -67,9 +77,18 @@ export default function Header() {
             STP Eagles
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}> {/* Hide buttons on mobile */}
-            <Button color="inherit" size="large">Subscribe</Button>
-            <Button color="inherit" size="large">Predict</Button>
-            <Button color="inherit" size="large">Data Visualisation</Button>
+            <Button color="inherit" size="large" onClick={() => handleNavigation('/')}>
+              Subscribe
+            </Button>
+            <Button color="inherit" size="large" onClick={() => handleNavigation('/prediction')}>
+              Predict
+            </Button>
+            <Button color="inherit" size="large" onClick={() => handleNavigation('/dashboard')}>
+              Data Visualisation
+            </Button>
+            <Button color="inherit" size="large" onClick={() => handleNavigation('/tips')}>
+              General Tips
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
