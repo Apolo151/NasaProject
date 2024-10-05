@@ -5,7 +5,7 @@ import { Typography, Container, Box, List, ListItem, ListItemText } from '@mater
 const Tips = () => {
   return (
     <Container maxWidth="md">
-      <Box my={4}>
+      <Box my={4} mb={4}>
         <Typography variant="h3" gutterBottom>
           Tips and Information for Farmers
         </Typography>
@@ -84,7 +84,7 @@ const Tips = () => {
         </Box>
 
         {/* Surface Soil Wetness Section */}
-        <Box my={3}>
+        <Box my={3} mb={4}>
           <Typography variant="h5" gutterBottom>
             Surface Soil Wetness
           </Typography>
@@ -95,10 +95,6 @@ const Tips = () => {
             In simple terms, it shows how much water is in the soil that is close enough for the plant roots to access. If soil moisture is too low, irrigation will be needed to keep crops healthy.
           </Typography>
         </Box>
-
-        <Typography variant="body2" paragraph>
-          These insights help farmers make better decisions about watering schedules, nutrient management, and plant care to improve crop yields and sustainability.
-        </Typography>
       </Box>
     </Container>
   );

@@ -12,7 +12,7 @@ export default function HeroSection() {
             <div className='HeroSectionContent'>
                 <h1>FarmIQ</h1>
                 <h3>Join us to transform your farming journey</h3>
-                <Button variant="contained" id="subscribeNow" sx={{fontSize:"2rem"}}>Checkout!</Button>
+                {/* <Button variant="contained" id="subscribeNow" sx={{fontSize:"2rem"}}>Checkout!</Button> */}
             </div>
         </div>
         <Container maxWidth="xl">

@@ -74,7 +74,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            STP Eagles
+            FarmIQ
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}> {/* Hide buttons on mobile */}
             <Button color="inherit" size="large" onClick={() => handleNavigation('/')}>
